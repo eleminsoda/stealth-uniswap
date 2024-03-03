@@ -1,8 +1,4 @@
-![Moonbeam Banner](uniswap-banner.png)
-
-# Uniswap V2 on Moonbeam
-
-This repository provides the tools necessary to deploy Uniswap V2 on Moonbeam: either in the Moonbase Alpha TestNet or in a Standalone node.
+# Stealth Uniswap V2
 
 **This repository is for demostration purposes only.**
 
@@ -10,17 +6,17 @@ This repository provides the tools necessary to deploy Uniswap V2 on Moonbeam: e
 
 There are three different repositories.
 
-### Uniswap Contracts Moonbeam
+### Uniswap Contracts Mode
 
-A Hardhat setup to deploy all the necessary either to Moonbase Alpha or a Standalone Moonbeam node.
+A Hardhat setup to deploy all the necessary.
 
-### Uniswap Interface Moonbeam
+### Uniswap Interface Mode
 
-The simple v2 Uniswap interface modified to work with Moonbase Alpha and a Standalone Moonbeam node.
+The simple v2 Uniswap interface modified to work with other chains.
 
-### Uniswap SDK Moonbeam
+### Uniswap SDK Mode
 
-Modified version of the Uniswap SDK to add compatibility with Moonbase Alpha and a Standalone Moonbeam node.
+Modified version of the Uniswap SDK to add compatibility.
 
 --
 
