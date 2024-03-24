@@ -21,6 +21,20 @@ const MEDIA_WIDTHS = {
   upToLarge: 1280
 }
 
+function hexToRgba(hex: string, alpha: number = 1): string {
+  let r = 0, g = 0, b = 0;
+  if (hex.length === 4) {
+    r = parseInt(hex[1] + hex[1], 16);
+    g = parseInt(hex[2] + hex[2], 16);
+    b = parseInt(hex[3] + hex[3], 16);
+  } else if (hex.length === 7) {
+    r = parseInt(hex[1] + hex[2], 16);
+    g = parseInt(hex[3] + hex[4], 16);
+    b = parseInt(hex[5] + hex[6], 16);
+  }
+  return `rgba(${r}, ${g}, ${b}, ${alpha})`;
+}
+
 const mediaWidthTemplates: { [width in keyof typeof MEDIA_WIDTHS]: typeof css } = Object.keys(MEDIA_WIDTHS).reduce(
   (accumulator, size) => {
     ;(accumulator as any)[size] = (a: any, b: any, c: any) => css`
@@ -50,22 +64,34 @@ export function colors(): Colors {
     text5: '#2C2F36',
 
     // backgrounds / greys
-    bg1: '#212429',
-    bg2: '#2C2F36',
-    bg3: '#40444F',
-    bg4: '#565A69',
-    bg5: '#6C7284',
+    bg1: hexToRgba('#212429',0.3),
+    bg2: hexToRgba('#2C2F36',0.3),
+    bg3: hexToRgba('#40444F',0.3),
+    bg4: hexToRgba('#565A69',0.3),
+    bg5: hexToRgba('#6C7284',0.3),
+    // bg3: '#40444F',
+    // bg4: '#565A69',
+    // bg5: '#6C7284',
+    // bg1: 'rgba(0,0,0,.425)',
+    // bg2: 'rgba(0,0,0,.425)',
+    // bg3: 'rgba(0,0,0,.425)',
+    // bg4: 'rgba(0,0,0,.425)',
+    // bg5: 'rgba(0,0,0,.425)',
 
     //specialty colors
     modalBG: 'rgba(0,0,0,.425)',
     advancedBG: 'rgba(0,0,0,0.1)',
 
     //primary colors
-    primary1: '#2172E5',
-    primary2: '#3680E7',
-    primary3: '#4D8FEA',
-    primary4: '#376bad70',
-    primary5: '#153d6f70',
+    primary1: hexToRgba('#2172E5',0.7),
+    primary2: hexToRgba('#3680E7',0.7),
+    primary3: hexToRgba('#4D8FEA',0.7),
+    primary4: hexToRgba('#376bad70',0.7),
+    primary5: hexToRgba('#153d6f70',0.7),
+    // primary2: '#3680E7',
+    // primary3: '#4D8FEA',
+    // primary4: '#376bad70',
+    // primary5: '#153d6f70',
 
     // color text
     primaryText1: '#6da8ff',
@@ -205,14 +231,20 @@ html {
 }
 `
 //background-color: ${({ theme }) => theme.bg2};
+// export const ThemedGlobalStyle = createGlobalStyle`
+// html {
+//   color: ${({ theme }) => theme.text1};
+//   background: url(${BackgroundImage})
+// }
+// `
 export const ThemedGlobalStyle = createGlobalStyle`
 html {
-  color: ${({ theme }) => theme.text1};
-  background: url(${BackgroundImage})
+  color: ${({ theme }) => theme.text2};
+  /*  background: url(${BackgroundImage}) */
 }
-
-
 `
+
+
 /* 
 body {
   min-height: 100vh;
