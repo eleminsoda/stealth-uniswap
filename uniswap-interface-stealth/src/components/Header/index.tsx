@@ -11,6 +11,7 @@ import { useETHBalances } from '../../state/wallet/hooks'
 
 import { YellowCard } from '../Card'
 import Settings from '../Settings'
+import projectLogo from "../../assets/images/project-logo.png"
 // import Menu from '../Menu'
 
 import { RowBetween } from '../Row'
@@ -87,12 +88,12 @@ const NetworkCard = styled(YellowCard)`
   padding: 8px 12px;
 `
 
-// const UniIcon = styled.div`
-//   transition: transform 0.3s ease;
-//   :hover {
-//     transform: rotate(-5deg);
-//   }
-// `
+const UniIcon = styled.div`
+  transition: transform 0.3s ease;
+  :hover {
+    transform: rotate(-5deg);
+  }
+`
 
 const HeaderControls = styled.div`
   display: flex;
@@ -128,9 +129,9 @@ export default function Header() {
       <RowBetween style={{ alignItems: 'flex-start' }} padding="1rem 1rem 0 1rem">
         <HeaderElement>
           <Title href=".">
-            {/*<UniIcon>*/}
-            {/*  <img style={{ height: 50 }} src={Logo} alt="logo" />*/}
-            {/*</UniIcon>*/}
+            <UniIcon>
+             <img style={{ height: 50 }} src={projectLogo} alt="logo" />
+            </UniIcon>
           </Title>
         </HeaderElement>
         <HeaderControls>
